@@ -1,0 +1,2 @@
+use blog;
+db.zips.aggregate([ { $group: {_id:{state:"$state",city:"$city"}, pop:{$sum:"$pop"}}}, {"$match":{ $or: [{"_id.state":"CA"},{"_id.state":"NY"}]}}, { "$match" : {pop:{$gt:25000}}} , { $group: {_id:null,average:{$avg:"$pop"}}} ])

@@ -1,0 +1,2 @@
+use blog;
+db.posts.aggregate([ {"$unwind":"$comments"} , {"$group": { _id:"$comments", count:{"$sum":1} } } , {$group: { _id: "$_id.author", countAuthors:{"$sum":1 } } }, {"$sort":{"countAuthors":-1}}, {"$limit":1} ] );
