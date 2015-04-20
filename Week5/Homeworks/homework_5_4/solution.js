@@ -1,0 +1,2 @@
+use homework_5_4;
+db.zips.aggregate([ {$project: {first_char: {$substr : ["$city",0,1]}, city:1, pop:1, state:1}}, {"$match":{"first_char":{$regex:'[0-9]'}}}, {"$group": {_id:null,totalPop:{$sum:"$pop"}}} ]);
