@@ -125,8 +125,29 @@ function PostsDAO(db) {
         // string 'Frank' in the 'author' field of the first element of the 'comments' array (which
         // is zero indexed).
 
+		this.getPostByPermalink(permalink, function(err, post) {
+            "use strict";
+
+            if (err) return next(err);
+            if (!post) return res.redirect("/post_not_found");
+
+			//console.log("Post: " + JSON.stringify(post));
+			var selector = {};
+			selector['comments.' + comment_ordinal + '.num_likes'] = post.comments[comment_ordinal].num_likes + 1;
+			//console.log("Likes: " + JSON.stringify(selector));
+			posts.update({'permalink': permalink}, {'$set': selector}, function(err, numModified) {
+				"use strict";
+
+				if (err) return callback(err, null);
+
+				callback(err, numModified);
+			});
+
+			//callback(err, post);
+        });
+
         // TODO: Final exam question - Increment the number of likes
-        callback(Error("incrementLikes NYI"), null);
+        //callback(Error("incrementLikes NYI"), null);
     }
 }
 
