@@ -20,6 +20,7 @@ db.messages.update( {"headers.Message-ID":"<8147308.1075851042335.JavaMail.evans
 blog application
 
 /*** QUESTION 5 ***/
+db.fubar.find( {'a':{'$lt':10000}, 'b':{'$gt': 5000}}, {'a':1, 'c':1}).sort({'c':-1})
 
 /*** QUESTION 6 ***/
 
