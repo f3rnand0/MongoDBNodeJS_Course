@@ -20,11 +20,12 @@ MongoClient.connect('mongodb://localhost:27017/photosharing', function(err, db) 
 			return;
 		}
 		
-		var query = {images:doc._id};
+		var query = {'images':doc._id};
 		var album = albumsData.find(query, function(err, doc) {
 			if(err) throw err;
+			console.dir("Album: " + album);
 			if (typeof album != 'undefined') {
-				console.dir("Image: " + doc._id + ", Album: " + album[0]._id);
+				console.dir("Image: " + doc._id + ", Album: " + album._id);
 			}
 			//console.dir(doc);
 			//db.close();
