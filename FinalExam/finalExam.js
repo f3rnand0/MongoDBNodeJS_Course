@@ -20,11 +20,24 @@ db.messages.update( {"headers.Message-ID":"<8147308.1075851042335.JavaMail.evans
 blog application
 
 /*** QUESTION 5 ***/
-db.fubar.find( {'a':{'$lt':10000}, 'b':{'$gt': 5000}}, {'a':1, 'c':1}).sort({'c':-1})
+db.fubar.explain().find({'a':{'$lt':10000}, 'b':{'$gt': 5000}}, {'a':1, 'c':1}).sort({'c':-1})
 
 /*** QUESTION 6 ***/
+http://stackoverflow.com/questions/17296602/can-mongodb-inserts-be-made-faster-using-the-hint-and-natural-operators
 
 /*** QUESTION 7 ***/
+Node1: P
+Node2: S
+Node3: S, delay 2 hours
+
+w=majority
+j=1
+
+Time=0s WRITE
+Time=5s Node 1 down. Not write operation, but written by Node 1 in DB
+Time=3600s Node 2 - P
+
+No rollback because data was written to database and journal has everything, so all nodes can be "synchronized"
 
 /*** QUESTION 8 ***/
 
