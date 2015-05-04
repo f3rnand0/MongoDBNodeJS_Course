@@ -10,49 +10,53 @@ MongoClient.connect('mongodb://localhost:27017/photosharing', function(err, db) 
 	var cursor = imagesData.find( {}, {'_id':1} );
 
 	var counterDocs = 0;
-	var counterUpds = 0;
-	var newState = '';
-	var actualState = '';
+	var counterFinds = 0;
+	var counterRemoves = 0;
+	var newImageId = '';
+	var actualImageId = '';
+	var cursorClosed = false;
 	
-    cursor.each(function(err, doc) {
+    cursor.each(function(err, doc1) {
         if(err) throw err;
-        if(doc == null) {
+        if(doc1 == null) {
+			cursorClosed = true;
 			return;
 		}
 		
-		var query = {'images':doc._id};
-		var album = albumsData.find(query, function(err, doc) {
+		function findImageInsideAlbum (imageId, err) {
 			if(err) throw err;
-			console.dir("Album: " + album);
-			if (typeof album != 'undefined') {
-				console.dir("Image: " + doc._id + ", Album: " + album._id);
-			}
-			//console.dir(doc);
-			//db.close();
-		});
-
-		/*function updateHighestStTemp (doc, err) {
-			if(err) throw err;
-			var query = doc;
-			var operator = { '$set' : { 'month_high' : true } };
-			data.update(query, operator, function(err, updated) {
+			var findQuery = {'images':imageId};
+			albumsData.findOne(findQuery, function(err, doc) {
 				if(err) throw err;
-				//console.dir("  counterUpds " + counterUpds);
-				++counterUpds;
-				if (counterUpds < 0 && counterUpds == counterDocs) {
-					//console.dir("DB closed");
-					db.close();
+				if(doc == null) {
+					var removeQuery = {'_id':imageId};
+					imagesData.remove(removeQuery, function(err, removed) {
+						if(err) throw err;
+						console.dir("Successfully removed " + removed + " documents!")
+						--counterRemoves;
+						//++counterRemoves;
+					});
+					++counterRemoves;
+					//console.dir("Images removed: " + counterRemoves);
+				}
+				--counterFinds;
+				++counterDocs;
+				console.dir("Images: " + counterDocs);
+				if (cursorClosed && counterFinds == 0 && counterRemoves == 0) {
+					return db.close();
 				}
 			});
 		}
-	
-		newState = doc.State;
-		if (newState != actualState) {
-			console.dir(doc);
-			++counterDocs;
-			updateHighestStTemp(doc, err);
+		
+		newImageId = doc1._id;
+		if (newImageId != actualImageId) {
+			++counterFinds;
+			findImageInsideAlbum(newImageId, err);
 		}
-		actualState = newState;*/
+		actualImageId = newImageId;
+		
     });
+	
+	console.dir("Images: " + counterFinds);
 	
 });

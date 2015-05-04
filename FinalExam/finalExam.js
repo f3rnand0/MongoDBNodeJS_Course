@@ -26,6 +26,8 @@ db.fubar.explain().find({'a':{'$lt':10000}, 'b':{'$gt': 5000}}, {'a':1, 'c':1}).
 http://stackoverflow.com/questions/17296602/can-mongodb-inserts-be-made-faster-using-the-hint-and-natural-operators
 
 /*** QUESTION 7 ***/
+
+/*** QUESTION 8 ***/
 Node1: P
 Node2: S
 Node3: S, delay 2 hours
@@ -38,8 +40,6 @@ Time=5s Node 1 down. Not write operation, but written by Node 1 in DB
 Time=3600s Node 2 - P
 
 No rollback because data was written to database and journal has everything, so all nodes can be "synchronized"
-
-/*** QUESTION 8 ***/
 
 /*** QUESTION 9 ***/
 
