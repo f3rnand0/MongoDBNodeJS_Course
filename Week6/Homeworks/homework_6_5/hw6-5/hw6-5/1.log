@@ -1,0 +1,112 @@
+2015-04-27T08:59:34.008-0500 I CONTROL  Hotfix KB2731284 or later update is not installed, will zero-out data files
+2015-04-27T08:59:34.020-0500 I JOURNAL  [initandlisten] journal dir=C:\data\rs1\journal
+2015-04-27T08:59:34.020-0500 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+2015-04-27T08:59:34.047-0500 I JOURNAL  [durability] Durability thread started
+2015-04-27T08:59:34.048-0500 I JOURNAL  [journal writer] Journal writer thread started
+2015-04-27T08:59:34.155-0500 I CONTROL  [initandlisten] MongoDB starting : pid=11672 port=27017 dbpath=C:\data\rs1 64-bit host=developer-PC
+2015-04-27T08:59:34.155-0500 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2015-04-27T08:59:34.155-0500 I CONTROL  [initandlisten] db version v3.0.1
+2015-04-27T08:59:34.156-0500 I CONTROL  [initandlisten] git version: 534b5a3f9d10f00cd27737fbcd951032248b5952
+2015-04-27T08:59:34.156-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1j-fips 15 Oct 2014
+2015-04-27T08:59:34.156-0500 I CONTROL  [initandlisten] build info: windows sys.getwindowsversion(major=6, minor=1, build=7601, platform=2, service_pack='Service Pack 1') BOOST_LIB_VERSION=1_49
+2015-04-27T08:59:34.156-0500 I CONTROL  [initandlisten] allocator: system
+2015-04-27T08:59:34.156-0500 I CONTROL  [initandlisten] options: { net: { port: 27017 }, replication: { oplogSizeMB: 64, replSet: "m101" }, storage: { dbPath: "C:\data\rs1", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "1.log" } }
+2015-04-27T08:59:34.189-0500 I INDEX    [initandlisten] allocating new ns file C:\data\rs1\local.ns, filling with zeroes...
+2015-04-27T08:59:34.559-0500 I STORAGE  [FileAllocator] allocating new datafile C:\data\rs1\local.0, filling with zeroes...
+2015-04-27T08:59:34.560-0500 I STORAGE  [FileAllocator] creating directory C:\data\rs1\_tmp
+2015-04-27T08:59:34.630-0500 I STORAGE  [FileAllocator] done allocating datafile C:\data\rs1\local.0, size: 16MB,  took 0.067 secs
+2015-04-27T08:59:34.678-0500 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2015-04-27T08:59:34.680-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2015-04-27T09:00:21.917-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8014 #1 (1 connection now open)
+2015-04-27T09:01:19.289-0500 I REPL     [conn1] replSetInitiate admin command received from client
+2015-04-27T09:01:19.328-0500 I REPL     [conn1] replSet replSetInitiate config object with 3 members parses ok
+2015-04-27T09:01:19.333-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8045 #2 (2 connections now open)
+2015-04-27T09:01:19.334-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8046 #3 (3 connections now open)
+2015-04-27T09:01:19.350-0500 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "m101", version: 1, members: [ { _id: 0, host: "localhost:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 1, host: "localhost:27018", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27019", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatTimeoutSecs: 10, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 } } }
+2015-04-27T09:01:19.350-0500 I REPL     [ReplicationExecutor] This node is localhost:27017 in the config
+2015-04-27T09:01:19.351-0500 I REPL     [ReplicationExecutor] transition to STARTUP2
+2015-04-27T09:01:19.351-0500 I REPL     [conn1] ******
+2015-04-27T09:01:19.351-0500 I REPL     [conn1] creating replication oplog of size: 64MB...
+2015-04-27T09:01:19.351-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state STARTUP
+2015-04-27T09:01:19.351-0500 I STORAGE  [FileAllocator] allocating new datafile C:\data\rs1\local.1, filling with zeroes...
+2015-04-27T09:01:19.351-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state STARTUP
+2015-04-27T09:01:19.688-0500 I STORAGE  [FileAllocator] done allocating datafile C:\data\rs1\local.1, size: 128MB,  took 0.335 secs
+2015-04-27T09:01:21.338-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8048 #4 (4 connections now open)
+2015-04-27T09:01:21.338-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8049 #5 (5 connections now open)
+2015-04-27T09:01:21.339-0500 I NETWORK  [conn4] end connection 127.0.0.1:8048 (4 connections now open)
+2015-04-27T09:01:21.339-0500 I NETWORK  [conn5] end connection 127.0.0.1:8049 (3 connections now open)
+2015-04-27T09:01:21.416-0500 I REPL     [conn1] ******
+2015-04-27T09:01:21.417-0500 I REPL     [conn1] Starting replication applier threads
+2015-04-27T09:01:21.418-0500 I COMMAND  [conn1] command admin.$cmd command: replSetInitiate { replSetInitiate: { _id: "m101", members: [ { _id: 0.0, host: "localhost:27017" }, { _id: 1.0, host: "localhost:27018" }, { _id: 2.0, host: "localhost:27019" } ] } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:37 locks:{} 2129ms
+2015-04-27T09:01:21.418-0500 I REPL     [ReplicationExecutor] transition to RECOVERING
+2015-04-27T09:01:21.425-0500 I REPL     [ReplicationExecutor] transition to SECONDARY
+2015-04-27T09:01:23.353-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state STARTUP2
+2015-04-27T09:01:23.353-0500 I REPL     [ReplicationExecutor] Standing for election
+2015-04-27T09:01:23.354-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state STARTUP2
+2015-04-27T09:01:23.355-0500 I REPL     [ReplicationExecutor] not electing self, localhost:27019 would veto with 'I don't think localhost:27017 is electable because the member is not currently a secondary (mask 0x8)'
+2015-04-27T09:01:23.355-0500 I REPL     [ReplicationExecutor] not electing self, we are not freshest
+2015-04-27T09:01:25.355-0500 I REPL     [ReplicationExecutor] Standing for election
+2015-04-27T09:01:25.356-0500 I REPL     [ReplicationExecutor] replSet info electSelf
+2015-04-27T09:01:25.357-0500 I REPL     [ReplicationExecutor] replSet election succeeded, assuming primary role
+2015-04-27T09:01:25.357-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2015-04-27T09:01:25.425-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2015-04-27T09:01:29.894-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8093 #6 (4 connections now open)
+2015-04-27T09:01:29.968-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8094 #7 (5 connections now open)
+2015-04-27T09:01:29.989-0500 I NETWORK  [conn7] end connection 127.0.0.1:8094 (4 connections now open)
+2015-04-27T09:01:29.989-0500 I NETWORK  [conn6] end connection 127.0.0.1:8093 (4 connections now open)
+2015-04-27T09:01:31.359-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2015-04-27T09:01:31.359-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2015-04-27T09:01:49.366-0500 I NETWORK  [conn2] end connection 127.0.0.1:8045 (2 connections now open)
+2015-04-27T09:01:49.366-0500 I NETWORK  [conn3] end connection 127.0.0.1:8046 (2 connections now open)
+2015-04-27T09:01:49.367-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8098 #8 (2 connections now open)
+2015-04-27T09:01:49.367-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8099 #9 (3 connections now open)
+2015-04-27T09:02:19.380-0500 I NETWORK  [conn8] end connection 127.0.0.1:8098 (2 connections now open)
+2015-04-27T09:02:19.380-0500 I NETWORK  [conn9] end connection 127.0.0.1:8099 (2 connections now open)
+2015-04-27T09:02:19.380-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8113 #10 (2 connections now open)
+2015-04-27T09:02:19.381-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8114 #11 (3 connections now open)
+2015-04-27T09:02:48.284-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8123 #12 (4 connections now open)
+2015-04-27T09:02:48.294-0500 I NETWORK  [conn12] end connection 127.0.0.1:8123 (3 connections now open)
+2015-04-27T09:02:48.302-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8124 #13 (4 connections now open)
+2015-04-27T09:02:48.303-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8125 #14 (5 connections now open)
+2015-04-27T09:02:48.304-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8126 #15 (6 connections now open)
+2015-04-27T09:02:48.304-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8127 #16 (7 connections now open)
+2015-04-27T09:02:48.305-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8128 #17 (8 connections now open)
+2015-04-27T09:02:48.330-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8139 #18 (9 connections now open)
+2015-04-27T09:02:48.330-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8140 #19 (10 connections now open)
+2015-04-27T09:02:48.338-0500 I NETWORK  [conn13] end connection 127.0.0.1:8124 (9 connections now open)
+2015-04-27T09:02:48.338-0500 I NETWORK  [conn14] end connection 127.0.0.1:8125 (8 connections now open)
+2015-04-27T09:02:48.338-0500 I NETWORK  [conn15] end connection 127.0.0.1:8126 (7 connections now open)
+2015-04-27T09:02:48.338-0500 I NETWORK  [conn16] end connection 127.0.0.1:8127 (6 connections now open)
+2015-04-27T09:02:48.338-0500 I NETWORK  [conn17] end connection 127.0.0.1:8128 (6 connections now open)
+2015-04-27T09:02:48.340-0500 I NETWORK  [conn18] end connection 127.0.0.1:8139 (4 connections now open)
+2015-04-27T09:02:48.341-0500 I NETWORK  [conn19] end connection 127.0.0.1:8140 (3 connections now open)
+2015-04-27T09:02:49.388-0500 I NETWORK  [conn11] end connection 127.0.0.1:8114 (2 connections now open)
+2015-04-27T09:02:49.389-0500 I NETWORK  [conn10] end connection 127.0.0.1:8113 (1 connection now open)
+2015-04-27T09:02:49.390-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8143 #20 (2 connections now open)
+2015-04-27T09:02:49.391-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8144 #21 (3 connections now open)
+2015-04-27T09:03:19.407-0500 I NETWORK  [conn21] end connection 127.0.0.1:8144 (2 connections now open)
+2015-04-27T09:03:19.408-0500 I NETWORK  [conn20] end connection 127.0.0.1:8143 (2 connections now open)
+2015-04-27T09:03:19.409-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8153 #22 (2 connections now open)
+2015-04-27T09:03:19.410-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:8154 #23 (3 connections now open)
+2015-04-27T09:03:29.306-0500 I CONTROL  CTRL_CLOSE_EVENT signal
+2015-04-27T09:03:29.306-0500 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2015-04-27T09:03:29.307-0500 I REPL     [consoleTerminate] Stopping replication applier threads
+2015-04-27T09:03:29.414-0500 I STORAGE  [conn22] got request after shutdown()
+2015-04-27T09:03:29.424-0500 I STORAGE  [conn23] got request after shutdown()
+2015-04-27T09:03:29.443-0500 I CONTROL  [consoleTerminate] now exiting
+2015-04-27T09:03:29.443-0500 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2015-04-27T09:03:29.443-0500 I NETWORK  [consoleTerminate] closing listening socket: 460
+2015-04-27T09:03:29.443-0500 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2015-04-27T09:03:29.444-0500 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2015-04-27T09:03:29.444-0500 I STORAGE  [consoleTerminate] shutdown: waiting for fs preallocator...
+2015-04-27T09:03:29.444-0500 I STORAGE  [consoleTerminate] shutdown: final commit...
+2015-04-27T09:03:29.444-0500 I NETWORK  [conn1] end connection 127.0.0.1:8014 (0 connections now open)
+2015-04-27T09:03:29.456-0500 I JOURNAL  [consoleTerminate] journalCleanup...
+2015-04-27T09:03:29.456-0500 I JOURNAL  [consoleTerminate] removeJournalFiles
+2015-04-27T09:03:29.457-0500 I JOURNAL  [consoleTerminate] Terminating durability thread ...
+2015-04-27T09:03:29.546-0500 I JOURNAL  [journal writer] Journal writer thread stopped
+2015-04-27T09:03:29.546-0500 I JOURNAL  [durability] Durability thread stopped
+2015-04-27T09:03:29.547-0500 I STORAGE  [consoleTerminate] shutdown: closing all files...
+2015-04-27T09:03:29.553-0500 I STORAGE  [consoleTerminate] closeAllFiles() finished
+2015-04-27T09:03:29.554-0500 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2015-04-27T09:03:29.554-0500 I CONTROL  [consoleTerminate] dbexit:  rc: 12
