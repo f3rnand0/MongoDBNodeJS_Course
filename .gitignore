@@ -3,3 +3,6 @@ enron.zip
 
 # Dumps
 dump/
+
+# Node
+node_modules/

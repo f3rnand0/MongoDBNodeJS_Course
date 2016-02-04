@@ -1,4 +1,4 @@
-use agg
+use agg;
 db.products.aggregate([
     {$group:
      {
